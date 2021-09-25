@@ -15,10 +15,17 @@ A variance value of zero represents that all of the values within a data set are
 **How to Calculate Variance?**
 
 Variance is calculated by taking the differences between each number in a data set and the mean, squaring those differences to give them positive value, and dividing the sum of the resulting squares by the number of values in the set.
-
 The formula for variance is as follows:
 
 <img src="https://user-images.githubusercontent.com/66825094/134767544-972d66ea-0b2d-4d85-a261-e0641d34ef56.png" width="200" height="100" />
+
+**Python Code to calculate Variance**
+
+We just need to import the statistics module and then call pvariance() with our data as an argument. That will return the variance of the population. On the other hand, we can use Python's variance() to calculate the variance of a sample and use it to estimate the variance of the entire population.
+
+    import statistics
+    print(statistics.variance([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
+    print(statistics.pvariance([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
 
 **Advantage of Variance**
 
@@ -40,6 +47,15 @@ Standard deviation is a measure that tells the dispersion of all possible values
 **How to Calculate Standard Deviation?**
 
 First find mean.To find the mean, add up all the scores, then divide them by the number of scores.Then find each score’s deviation from the mean i.e.,subtract the mean from each score to get the deviations from the mean. Now square each deviation from the mean. Add up all of the squared deviations.Divide the sum of the squares by n – 1 (for a sample) or N (for a population) – this is the variance.To find the standard deviation, we take the square root of the variance.
+
+
+**Python Code to calculate Standard Deviation**
+
+We can find using pstdev() and stdev(). The first function takes the data of an entire population and returns its standard deviation. The second function takes data from a sample and returns an estimation of the population standard deviation.
+
+    import statistics
+    print(statistics.pstdev([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
+    print(statistics.stdev([4, 8, 6, 5, 3, 2, 8, 9, 2, 5]))
 
 **Advantage of Standard Deviation**
 
@@ -64,6 +80,23 @@ The expected value OR Expectation of a random variable ‘𝑿’ is an average 
 **How to Calculate expected value?**
 
 To find the expected value, E(X), or mean μ of a discrete random variable X, simply multiply each value of the random variable by its probability and add the products. The formula is given as E(X)=μ=∑xP(x).
+
+**Python Code to calculate Expected Value**
+
+It is calculated as the probability weighted sum of values that can be drawn.
+
+E[X] = sum(x1 p1, x2 p2, x3 p3, ..., xn pn)
+
+In simple cases, such as the flipping of a coin or rolling a dice, the probability of each event is just as likely.
+
+E[X] = sum(x1, x2, x3, ..., xn) . 1/n
+
+    from numpy import array
+    from numpy import mean
+
+    v = array([1,2,3,4,5,6]) 
+    print('The Expectation is' , mean(v))
+    
 
 **Advantage of expected value**
 * Takes uncertainty into account by considering the probability of each possible outcome and using this information to calculate an expected value.
